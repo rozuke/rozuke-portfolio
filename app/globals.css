@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-image {
+  background-image: url("/images/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
