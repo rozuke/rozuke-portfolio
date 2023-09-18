@@ -9,3 +9,14 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.text-gradient-primary-to-secondary {
+  background: linear-gradient(95deg, #F62279 -2.8%, #B7DEFE 113.03%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.margin-center {
+  margin: 0 auto;
+}

@@ -17,6 +17,10 @@ module.exports = {
       textColor: {
         "secondary-200": "#B7DEFE",
       },
+      gradientColorStops: (theme) => ({
+        ...theme("colors"),
+        "primary-to-secondary": "95deg, #F62279 -2.8%, #B7DEFE 113.03%",
+      }),
     },
   },
   plugins: [],
