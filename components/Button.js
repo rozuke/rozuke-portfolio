@@ -1,10 +1,12 @@
 import Image from "next/image";
 
-const Button = () => {
+const Button = ({ text, color, size, icon }) => {
   return (
-    <button className="bg-secondary flex text-lg px-8 py-3 font-medium text-white items-center gap-2 rounded-xl">
-      Resume{" "}
-      <Image src={"/images/icons/download-icon.svg"} width={30} height={30} />
+    <button
+      className={`${color} ${size} flex text-lg font-medium text-white items-center gap-2 rounded-xl`}
+    >
+      <span className="mx-auto">{`${text} `}</span>
+      {icon && <Image src={icon} alt="Button icon" width={25} height={25} />}
     </button>
   );
 };

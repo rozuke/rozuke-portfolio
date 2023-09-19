@@ -40,7 +40,7 @@ export const skills = [
     image: "/images/skills/figma-icon.svg",
   },
   {
-    name: "Spring Boot",
+    name: "Amazon Web Service",
     image: "/images/skills/aws-icon.svg",
   },
 ];
