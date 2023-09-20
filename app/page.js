@@ -5,10 +5,12 @@ import { skills } from "@/utils/skills";
 import { projects } from "@/utils/projects";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
+import Link from "next/link";
+import Tabbar from "@/components/Tabbar";
 export default function Home() {
   return (
     <>
-      <div className="bg-image min-h-full">
+      <div className="bg-image min-h-full" id="home">
         <nav className="w-full flex space-x-8 justify-end px-5 py-3">
           <a href="https://github.com/rozuke/" target="_blank">
             <Image
@@ -69,7 +71,7 @@ export default function Home() {
           />
         </main>
       </div>
-      <section className="w-10/12 mx-auto">
+      <section className="w-10/12 mx-auto" id="skills">
         <div className="mt-12">
           <Title title={"Skills"} />
         </div>
@@ -90,7 +92,7 @@ export default function Home() {
           })}
         </ul>
       </section>
-      <section className="w-10/12 mx-auto">
+      <section className="w-10/12 mx-auto" id="projects">
         <div className="mt-12 mb-6">
           <Title title={"Projects"} />
         </div>
@@ -100,7 +102,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="w-10/12 mx-auto">
+      <section className="w-10/12 mx-auto" id="contact">
         <div className="mt-12 mb-6">
           <Title title={"Contact"} />
         </div>
@@ -130,7 +132,7 @@ export default function Home() {
         <Footer />
         <div className="h-14"></div>
       </section>
-      <div className="w-full h-14 bg-background fixed left-0 bottom-0"></div>
+      <Tabbar />
     </>
   );
 }
