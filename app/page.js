@@ -5,45 +5,14 @@ import { skills } from "@/utils/skills";
 import { projects } from "@/utils/projects";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
-import Link from "next/link";
 import Tabbar from "@/components/Tabbar";
+import Navbar from "@/components/Navbar";
 export default function Home() {
   return (
     <>
       <div className="bg-image min-h-full" id="home">
-        <nav className="w-full flex space-x-8 justify-end px-5 py-3">
-          <a href="https://github.com/rozuke/" target="_blank">
-            <Image
-              src="/images/icons/github-icon.svg"
-              alt="Github icon"
-              width={30}
-              height={30}
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/rodrigo-e-sulca/"
-            target="_blank"
-          >
-            <Image
-              src="/images/icons/linkedin-icon.svg"
-              alt="Linkedin icon"
-              width={30}
-              height={30}
-            />
-          </a>
-          <a
-            href="https://www.upwork.com/freelancers/~01b0f3b4792e55c5c3"
-            target="_blank"
-          >
-            <Image
-              src="/images/icons/upwork-icon.svg"
-              alt="Upwork icon"
-              width={30}
-              height={30}
-            />
-          </a>
-        </nav>
-        <main className="flex flex-col items-center text-center w-11/12 mx-auto mt-20">
+        <Navbar />
+        <main className="flex flex-col items-center text-center w-10/12 mx-auto mt-20">
           <h1 className="text-white text-4xl font-bold">
             Hi my name is <br />
             Rodrigo Sulca
@@ -78,7 +47,7 @@ export default function Home() {
         <ul className="flex flex-wrap items-center">
           {skills.map((skill) => {
             return (
-              <li className="text-white w-1/2 text-center mt-10">
+              <li className="text-white w-1/2 text-center mt-10 md:w-2/6">
                 <Image
                   src={skill.image}
                   width={45}
@@ -130,7 +99,7 @@ export default function Home() {
       </section>
       <section>
         <Footer />
-        <div className="h-14"></div>
+        <div className="h-14 md:hidden"></div>
       </section>
       <Tabbar />
     </>

@@ -25,6 +25,7 @@ module.exports = {
       textColor: {
         "secondary-200": "#B7DEFE",
         "accent-400": "#C359AC",
+        "accent-200": "#E6B9DB",
       },
     },
   },

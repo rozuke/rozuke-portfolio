@@ -4,7 +4,7 @@ import React from "react";
 
 const Tabbar = () => {
   return (
-    <div className="w-full h-14 bg-background fixed left-0 bottom-0 flex justify-around items-center my-auto">
+    <div className="w-full h-14 bg-background fixed left-0 bottom-0 flex justify-around items-center my-auto md:hidden">
       <Link href="#home">
         <Image
           src={"/images/icons/house-icon.svg"}
