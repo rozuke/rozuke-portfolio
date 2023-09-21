@@ -43,8 +43,8 @@ const ProjectCard = ({ project }) => {
               <Image
                 src={"/images/icons/github-icon.svg"}
                 alt="Github icon"
-                width={16}
-                height={16}
+                width={25}
+                height={25}
               />
             </Link>
           </div>

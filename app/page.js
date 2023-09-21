@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/components/Button";
 import Title from "@/components/Title";
 import Image from "next/image";
@@ -8,6 +9,12 @@ import Footer from "@/components/Footer";
 import Tabbar from "@/components/Tabbar";
 import Navbar from "@/components/Navbar";
 export default function Home() {
+  const openResume = () => {
+    window.open(
+      "https://drive.google.com/file/d/17J4zlYx8ogo5T7P-91JpEIvNPX---YiN/view?usp=drive_link",
+      "_blank"
+    );
+  };
   return (
     <>
       <div className="bg-image min-h-full" id="home">
@@ -31,6 +38,7 @@ export default function Home() {
                 color="bg-secondary"
                 size="px-8 py-3"
                 icon="/images/icons/download-icon.svg"
+                onClick={openResume}
               />
             </div>
           </div>
@@ -50,7 +58,10 @@ export default function Home() {
         <ul className="flex flex-wrap items-center">
           {skills.map((skill) => {
             return (
-              <li className="text-white w-1/2 text-center mt-10 md:w-2/6 lg:w-1/4 lg:text-lg">
+              <li
+                className="text-white w-1/2 text-center mt-10 md:w-2/6 lg:w-1/4 lg:text-lg"
+                key={skill.name}
+              >
                 <Image
                   src={skill.image}
                   width={45}
@@ -79,7 +90,7 @@ export default function Home() {
           <div className=" mb-6">
             <Title title={"Contact"} />
           </div>
-          <form className="flex flex-col lg:w-1/2">
+          <form className="flex flex-col lg:w-2/5 lg:gap-6">
             <input
               type="email"
               id="email"
@@ -105,12 +116,12 @@ export default function Home() {
             </div>
           </form>
         </div>
-        <div className="hidden lg:block lg:w-1/2 lg:absolute lg:inset-y-0 lg:right-0">
+        <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0">
           <Image
             src={"/images/coding-rubick.png"}
             width={775}
             height={670}
-            className=" h-full ml-auto"
+            className=" h-full ml-auto "
           />
         </div>
       </section>
