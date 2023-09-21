@@ -68,6 +68,7 @@ export default function Home() {
                   height={45}
                   className="margin-center"
                   alt={`${skill.name} icon`}
+                  key={skill.name}
                 />
                 <p>{skill.name}</p>
               </li>
