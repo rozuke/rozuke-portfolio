@@ -27,6 +27,9 @@ module.exports = {
         "accent-400": "#C359AC",
         "accent-200": "#E6B9DB",
       },
+      boxShadowColor: {
+        primary: "rgba(246, 34, 121, 0.59)",
+      },
     },
   },
   plugins: [],

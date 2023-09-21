@@ -12,31 +12,34 @@ export default function Home() {
     <>
       <div className="bg-image min-h-full" id="home">
         <Navbar />
-        <main className="flex flex-col items-center text-center w-10/12 mx-auto mt-20">
-          <h1 className="text-white text-4xl font-bold">
-            Hi my name is <br />
-            Rodrigo Sulca
-          </h1>
-          <h2 className="text-2xl font-medium italic text-secondary-200 m-4">
-            Backend Developer
-          </h2>
-          <h3 className="text-white text-lg">
-            I am a System Engineering from Bolivia with a passion for technology
-            and developing innovative solutions.
-          </h3>
-          <div className="my-6">
-            <Button
-              text="Resume"
-              color="bg-secondary"
-              size="px-8 py-3"
-              icon="/images/icons/download-icon.svg"
-            />
+        <main className="flex flex-col items-center justify-center text-center w-10/12 mx-auto mt-20 lg:flex-row lg:text-left lg:justify-between">
+          <div className="lg:flex lg:flex-col lg:gap-y-4 lg:w-1/2 lg:pr-8">
+            <h1 className="text-white text-4xl font-bold lg:text-5xl">
+              Hi my name is <br />
+              Rodrigo Sulca
+            </h1>
+            <h2 className="text-2xl font-medium italic text-secondary-200 my-4 lg:text-4xl">
+              Backend Developer
+            </h2>
+            <h3 className="text-white text-lg lg:text-2xl">
+              I am a System Engineering from Bolivia with a passion for
+              technology and developing innovative solutions.
+            </h3>
+            <div className="my-6 text-center">
+              <Button
+                text="Resume"
+                color="bg-secondary"
+                size="px-8 py-3"
+                icon="/images/icons/download-icon.svg"
+              />
+            </div>
           </div>
           <Image
             src={"/images/rozuke-ia.png"}
             alt="Rozuke photo"
-            width={268}
-            height={268}
+            width={750}
+            height={750}
+            className="lg:ml-6 lg:w-1/2"
           />
         </main>
       </div>
@@ -47,7 +50,7 @@ export default function Home() {
         <ul className="flex flex-wrap items-center">
           {skills.map((skill) => {
             return (
-              <li className="text-white w-1/2 text-center mt-10 md:w-2/6">
+              <li className="text-white w-1/2 text-center mt-10 md:w-2/6 lg:w-1/4 lg:text-lg">
                 <Image
                   src={skill.image}
                   width={45}
@@ -65,37 +68,51 @@ export default function Home() {
         <div className="mt-12 mb-6">
           <Title title={"Projects"} />
         </div>
-        <div className="grid grid-cols-12 space-y-10">
+        <div className="grid grid-cols-12 gap-y-12 lg:gap-x-16">
           {projects.map((project) => (
             <ProjectCard project={project} />
           ))}
         </div>
       </section>
-      <section className="w-10/12 mx-auto" id="contact">
+      <section className="relative w-10/12 mx-auto" id="contact">
         <div className="mt-12 mb-6">
           <Title title={"Contact"} />
         </div>
-        <form>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="w-full border rounded px-3 py-2 bg-accent-100 focus:outline-none focus:border-accent"
-            placeholder="Email"
-            required
-          />
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Message"
-            className="w-full border rounded mt-6 px-3 py-2 bg-accent-100 focus:outline-none focus:border-accent"
-            rows="6"
-            required
-          ></textarea>
-          <div className="my-6">
-            <Button text="Send" color="bg-primary" size="w-full py-4" />
+        <div className="lg:flex">
+          <form className="flex flex-col lg:w-1/2">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className="w-full border rounded px-3 py-2  bg-accent-100 focus:outline-none focus:border-accent shadow-md shadow-primary"
+              placeholder="Email"
+              required
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Message"
+              className="w-full border rounded mt-6 px-3 py-2 bg-accent-100 focus:outline-none focus:border-accent shadow-md shadow-primary"
+              rows="6"
+              required
+            ></textarea>
+            <div className="my-6">
+              <Button
+                text="Send"
+                color="bg-primary"
+                size="w-full py-4 lg:w-1/2"
+              />
+            </div>
+          </form>
+          <div className="hidden lg:block lg:w-1/2 lg:absolute lg:top-0 lg:left-0">
+            <Image
+              src={"/images/coding-rubick.png"}
+              width={775}
+              height={670}
+              className=" h-full"
+            />
           </div>
-        </form>
+        </div>
       </section>
       <section>
         <Footer />
