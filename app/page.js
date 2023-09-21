@@ -74,11 +74,11 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="relative w-10/12 mx-auto" id="contact">
-        <div className="mt-12 mb-6">
-          <Title title={"Contact"} />
-        </div>
-        <div className="lg:flex">
+      <section className="relative mt-12" id="contact">
+        <div className="w-10/12 mx-auto">
+          <div className=" mb-6">
+            <Title title={"Contact"} />
+          </div>
           <form className="flex flex-col lg:w-1/2">
             <input
               type="email"
@@ -104,17 +104,17 @@ export default function Home() {
               />
             </div>
           </form>
-          <div className="hidden lg:block lg:w-1/2 lg:absolute lg:top-0 lg:left-0">
-            <Image
-              src={"/images/coding-rubick.png"}
-              width={775}
-              height={670}
-              className=" h-full"
-            />
-          </div>
+        </div>
+        <div className="hidden lg:block lg:w-1/2 lg:absolute lg:inset-y-0 lg:right-0">
+          <Image
+            src={"/images/coding-rubick.png"}
+            width={775}
+            height={670}
+            className=" h-full ml-auto"
+          />
         </div>
       </section>
-      <section>
+      <section className="lg:mt-20">
         <Footer />
         <div className="h-14 md:hidden"></div>
       </section>
