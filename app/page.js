@@ -122,7 +122,7 @@ export default function Home() {
             src={"/images/coding-rubick.png"}
             width={775}
             height={670}
-            className=" h-full ml-auto "
+            className=" h-full ml-auto"
           />
         </div>
       </section>
