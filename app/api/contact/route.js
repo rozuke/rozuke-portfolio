@@ -165,6 +165,7 @@ export async function POST(req) {
       ...generateEmailContent(res),
       subject: "Job email",
     });
+    console.log("All ok");
     return NextResponse.json(
       {
         message: "Message sent",
@@ -174,6 +175,7 @@ export async function POST(req) {
       }
     );
   } catch (error) {
+    console.log(error.message);
     return NextResponse.json(
       {
         message: error.message,
