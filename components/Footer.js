@@ -17,17 +17,6 @@ const Footer = () => {
             />
           </figure>
         </div>
-        <div className="flex items-center space-x-2">
-          <figure>
-            <Image
-              src="/images/icons/email-icon.svg"
-              width={20}
-              height={20}
-              alt="Email icon"
-            />
-          </figure>
-          <figcaption>rodrigo.sulca499@gmail.com</figcaption>
-        </div>
       </div>
     </footer>
   );
