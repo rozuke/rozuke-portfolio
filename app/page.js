@@ -8,13 +8,39 @@ import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
 import Tabbar from "@/components/Tabbar";
 import Navbar from "@/components/Navbar";
+import { useState } from "react";
+import { sendContactForm } from "@/utils/api";
+
+const initValues = { name: "", email: "", message: "" };
+
+const initState = { values: initValues };
+
 export default function Home() {
+  const [state, setState] = useState(initState);
+
+  const { values } = state;
+
+  const handleChange = ({ target }) =>
+    setState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [target.name]: target.value,
+      },
+    }));
   const openResume = () => {
     window.open(
       "https://drive.google.com/file/d/17J4zlYx8ogo5T7P-91JpEIvNPX---YiN/view?usp=drive_link",
       "_blank"
     );
   };
+
+  const onSubmit = async () => {
+    await sendContactForm(values);
+    setState(initState);
+    alert("Message sent");
+  };
+
   return (
     <>
       <div className="bg-image min-h-full" id="home">
@@ -93,9 +119,21 @@ export default function Home() {
           </div>
           <form className="flex flex-col lg:w-2/5 lg:gap-6">
             <input
+              type="text"
+              id="name"
+              name="name"
+              value={values.name || ""}
+              onChange={handleChange}
+              className="w-full border rounded px-3 py-2  bg-accent-100 focus:outline-none focus:border-accent shadow-md shadow-primary"
+              placeholder="Name"
+              required
+            />
+            <input
               type="email"
               id="email"
               name="email"
+              value={values.email || ""}
+              onChange={handleChange}
               className="w-full border rounded px-3 py-2  bg-accent-100 focus:outline-none focus:border-accent shadow-md shadow-primary"
               placeholder="Email"
               required
@@ -104,6 +142,8 @@ export default function Home() {
               id="message"
               name="message"
               placeholder="Message"
+              value={values.message || ""}
+              onChange={handleChange}
               className="w-full border rounded mt-6 px-3 py-2 bg-accent-100 focus:outline-none focus:border-accent shadow-md shadow-primary"
               rows="6"
               required
@@ -113,6 +153,7 @@ export default function Home() {
                 text="Send"
                 color="bg-primary"
                 size="w-full py-4 lg:w-1/2"
+                onClick={onSubmit}
               />
             </div>
           </form>
