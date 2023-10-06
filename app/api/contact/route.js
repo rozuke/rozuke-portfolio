@@ -165,7 +165,22 @@ export async function POST(req) {
       ...generateEmailContent(res),
       subject: "Job email",
     });
+    return NextResponse.json(
+      {
+        message: "Message sent",
+      },
+      {
+        status: 200,
+      }
+    );
   } catch (error) {
-    return NextResponse.error(error.message);
+    return NextResponse.json(
+      {
+        message: error.message,
+      },
+      {
+        status: 400,
+      }
+    );
   }
 }
