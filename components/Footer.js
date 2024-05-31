@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -9,12 +10,14 @@ const Footer = () => {
         <div className="flex items-center flex-col space-y-2 lg:flex-row lg:gap-4">
           <figcaption>Member of KiwIT Agency</figcaption>
           <figure>
-            <Image
-              src="/images/icons/kiwitlogo2.svg"
-              width={70}
-              height={50}
-              alt="KiwIT logo"
-            />
+            <Link href={"https://www.kiwitagency.io/"} target="_blank">
+              <Image
+                src="/images/icons/kiwitlogo2.svg"
+                width={70}
+                height={50}
+                alt="KiwIT logo"
+              />
+            </Link>
           </figure>
         </div>
       </div>
