@@ -30,7 +30,7 @@ export default function Home() {
     }));
   const openResume = () => {
     window.open(
-      "https://drive.google.com/file/d/17J4zlYx8ogo5T7P-91JpEIvNPX---YiN/view?usp=drive_link",
+      "https://drive.google.com/file/d/1hYfI7fKpeVBCPwQ_ekI7j994kpJhgDSj/view?usp=sharing",
       "_blank"
     );
   };

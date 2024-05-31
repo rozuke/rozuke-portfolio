@@ -13,7 +13,7 @@ const ProjectCard = ({ project }) => {
           >
             <Image
               loading="lazy"
-              alt={project.description}
+              alt={project.title}
               width={1200}
               height={720}
               src={project.image}
@@ -27,9 +27,10 @@ const ProjectCard = ({ project }) => {
             {project.type}
           </span>
           <h3 className="text-white text-2xl font-bold my-4 flex-grow">
-            {project.description}
+            {project.title}
           </h3>
-          <div className="flex w-full items-center justify-between">
+          <p className="text-white ">{project.description}</p>
+          <div className="flex w-full items-center justify-between mt-4">
             {project.websiteURL && (
               <Link
                 href={project.websiteURL}
